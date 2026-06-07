@@ -314,6 +314,11 @@ def to_cards_from_tfidf_items(tfidf_items):
 # ==============================================================================
 # UNIFORM CORE GRID PLATFORM (Hardcoded 6 Columns)
 # ==============================================================================
+def safe_poster(poster):
+    if isinstance(poster, str) and poster.strip() and poster.startswith("http"):
+        return poster
+    return "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&auto=format&fit=crop"
+
 def poster_grid(cards, key_prefix="grid"):
     if not cards:
         st.info("No films match this configuration. Try adjusting your selection.")
@@ -338,7 +343,7 @@ def poster_grid(cards, key_prefix="grid"):
                 st.markdown('<div class="grid-container"><div class="movie-card">', unsafe_allow_html=True)
                 st.markdown('<div class="movie-poster-wrapper">', unsafe_allow_html=True)
                 if isinstance(poster, str) and poster.strip():
-                    st.image(poster, use_container_width=True)
+                    st.image(safe_poster(poster), use_container_width=True)
                 else:
                     st.image("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&auto=format&fit=crop", use_container_width=True)
                 st.markdown('</div>', unsafe_allow_html=True)
