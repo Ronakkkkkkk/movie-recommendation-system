@@ -343,14 +343,14 @@ def poster_grid(cards, key_prefix="grid"):
                 st.markdown('<div class="grid-container"><div class="movie-card">', unsafe_allow_html=True)
                 st.markdown('<div class="movie-poster-wrapper">', unsafe_allow_html=True)
                 if isinstance(poster, str) and poster.strip():
-                    st.image(safe_poster(poster), use_container_width=True)
+                    st.image(safe_poster(poster))
                 else:
-                    st.image("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&auto=format&fit=crop", use_container_width=True)
+                    st.image("https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=300&auto=format&fit=crop")
                 st.markdown('</div>', unsafe_allow_html=True)
                 st.markdown(f"<div class='movie-title'>{title}</div>", unsafe_allow_html=True)
                 st.markdown('</div>', unsafe_allow_html=True)
                 
-                if st.button("Explore", key=f"{key_prefix}_{r}_{c}_{idx}_{tmdb_id}", use_container_width=True):
+                if st.button("Explore", key=f"{key_prefix}_{r}_{c}_{idx}_{tmdb_id}"):
                     if tmdb_id:
                         goto_details(tmdb_id)
                 st.markdown('</div>', unsafe_allow_html=True)
@@ -418,7 +418,7 @@ if st.session_state.view == "home":
 
     # 3. Primary Dashboard Feed Matrix Hydration Setup
     current_active_cat = st.session_state.home_cat
-    st.markdown(f"<div class='section-header'>Featured Stream Engine Engine // {CATS[current_active_cat]}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='section-header'>{CATS[current_active_cat]}</div>", unsafe_allow_html=True)
 
     with st.spinner("Hydrating data arrays..."):
         home_cards, err = api_get_json("/home", params={"category": current_active_cat, "limit": 24})
@@ -458,7 +458,7 @@ elif st.session_state.view == "details":
 
     with left:
         if data.get("poster_url"):
-            st.image(data["poster_url"], use_container_width=True)
+            st.image(data["poster_url"])
         else:
             st.info("Missing Poster Asset Reference")
 
