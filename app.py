@@ -8,7 +8,7 @@ API_BASE = "https://movie-recommendation-system-2-1b3z.onrender.com"
 TMDB_IMG = "https://image.tmdb.org/t/p/w500"
 
 st.set_page_config(
-    page_title="THE VAULT // Cinema Intelligence",
+    page_title="THE VAULT | Cinema Intelligence",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
