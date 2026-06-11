@@ -225,19 +225,6 @@ https://the-vault.streamlit.app
 
 ---
 
-## Future Improvements
-
-* Collaborative filtering
-* User authentication
-* Personalized recommendations
-* Watchlists
-* Rating system
-* Hybrid recommendation models
-* Docker deployment
-* Trailer integration
-
----
-
 ## Author
 
 Ronak
