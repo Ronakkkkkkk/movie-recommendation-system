@@ -227,7 +227,7 @@ https://the-vault.streamlit.app
 
 ## Author
 
-Ronak
+Ronak Sharma
 
 GitHub:
 https://github.com/Ronakkkkkkk
